@@ -1,10 +1,5 @@
 .header {
-  background: $color-primary;
   position: relative;
-
-  .nav {
-    margin: $margin-page-conatiner;
-  }
 
   .drawer {
     position: absolute;
@@ -16,7 +11,7 @@
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
-  padding: 20px 0;
+  align-items: center;
 
   .nav__icon-hamburger {
     cursor: pointer;
@@ -24,6 +19,7 @@
 
   .brand {
     text-align: center;
+    text-transform: uppercase;
   }
 
   .list {
@@ -38,10 +34,6 @@
 @media screen and (min-width: 768px) {
   .header {
     position: static;
-
-    .nav {
-      margin: $margin-page-conatiner-desktop;
-    }
 
     .nav__icon-hamburger {
       display: none;
@@ -104,5 +96,9 @@
     .list {
       order: 3;
     }
+  }
+
+  .nav__bottom {
+    margin-top: 2rem;
   }
 }

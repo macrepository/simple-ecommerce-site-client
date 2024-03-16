@@ -1,8 +1,8 @@
-$color-primary: #292d32;
-$color-secondary: #474a4e;
+$color-primary: #f84822;
+$color-secondary: #f03108;
 $color-accent: #ea1400;
-$color-headings: #7b7d80;
-$color-body: #909090;
+$color-headings: #fff;
+$color-body: #111;
 $border-radius: 5px;
 $margin-page-conatiner: 0 2rem;
 $margin-page-conatiner-desktop: 0 5rem;
@@ -88,10 +88,45 @@ p {
 
 a {
   text-decoration: none;
-  text-transform: uppercase;
   color: $color-body;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+.container {
+  margin: $margin-page-conatiner;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin: $margin-page-conatiner-desktop;
+  }
+}
+
+.header,
+.footer {
+  background: $color-primary;
+  padding: 2rem 0;
+  background: $color-primary;
+
+  p,
+  a,
+  .icon {
+    color: $color-headings;
+  }
+
+  input {
+    border-color: $color-headings;
+    color: $color-body;
+
+    &::placeholder {
+      color: $color-body;
+    }
+  }
+}
+
+.main {
+  margin: 2rem 0;
 }

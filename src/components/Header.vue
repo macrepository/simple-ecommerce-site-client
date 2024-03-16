@@ -10,7 +10,7 @@ const isDrawerOpen = ref(false);
 
 <template>
     <header class="header">
-        <nav class="nav">
+        <nav class="nav container">
             <div class="nav__top">
                 <IconHamburger class="nav__icon-hamburger" @click="isDrawerOpen = true" />
                 <RouterLink to="/" class="brand">Shopping</RouterLink>
@@ -43,13 +43,13 @@ const isDrawerOpen = ref(false);
                         <template #content>
                             <ul class="list header__links">
                                 <li class="list__item">
-                                    <RouterLink to="/pc">PC</RouterLink>
+                                    <RouterLink to="/pc">Pc</RouterLink>
                                 </li>
                                 <li class="list__item">
-                                    <RouterLink to="/mobile">MOBILE</RouterLink>
+                                    <RouterLink to="/mobile">Mobile</RouterLink>
                                 </li>
                                 <li class="list__item">
-                                    <RouterLink to="/shoes">SHOES</RouterLink>
+                                    <RouterLink to="/shoes">Shoes</RouterLink>
                                 </li>
                             </ul>
                         </template>
