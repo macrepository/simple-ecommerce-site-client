@@ -1,0 +1,7 @@
+%icon-shared {
+  width: 2rem;
+}
+
+.icon {
+  @extend %icon-shared;
+}
