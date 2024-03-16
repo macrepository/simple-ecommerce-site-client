@@ -1,0 +1,97 @@
+$color-primary: #292d32;
+$color-secondary: #474a4e;
+$color-accent: #ea1400;
+$color-headings: #7b7d80;
+$color-body: #909090;
+$border-radius: 5px;
+$margin-page-conatiner: 0 2rem;
+$margin-page-conatiner-desktop: 0 5rem;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Typography */
+::selection {
+  background: $color-primary;
+  color: $color-body;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: $color-body;
+}
+
+h1,
+h2,
+h3 {
+  color: $color-headings;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 8rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-body;
+}
+
+a:hover {
+  text-decoration: underline;
+}

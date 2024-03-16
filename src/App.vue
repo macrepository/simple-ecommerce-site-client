@@ -1,10 +1,22 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
 
 </script>
 
 <template>
-  
+  <NavBar />
+  <main>
+    <RouterView />
+  </main>
+  <aside>
 
-  <RouterView />
+  </aside>
+  <footer>
+    <nav>
+      <ul>
+        <li>About page</li>
+        <li>Contact Us</li>
+        <li></li>
+      </ul>
+    </nav>
+  </footer>
 </template>
