@@ -1,0 +1,16 @@
+/* Lists */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .active {
+    font-weight: 500;
+    color: darken($color-body, 5%);
+  }
+}
+
+.list--inline {
+  display: flex;
+  gap: 20px;
+}
