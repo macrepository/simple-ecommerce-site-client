@@ -5,10 +5,15 @@
 
 input {
   border-radius: $border-radius;
-  border: 1px solid $color-body;
-  font-size: 1.5rem;
+  border: 1px solid darken($color-nav, 30%);
+  font-size: 1.2rem;
   outline: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
+
+  &:focus {
+    border-color: darken($color-nav, 60%);
+    transition: border-color 0.5s;
+  }
 }
 
 label {
@@ -44,5 +49,34 @@ label {
     border-radius: 0;
     border-width: 0 0 1px;
     width: 100%;
+  }
+}
+
+form {
+  .input-group {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+/* Button */
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: $border-radius;
+  outline: none;
+  white-space: nowrap;
+  border: 0;
+}
+
+.btn--primary {
+  background: $color-primary;
+  color: $color-nav;
+
+  &:hover {
+    background-color: lighten($color-primary, 5%);
+    transition: background-color 0.3s;
   }
 }
