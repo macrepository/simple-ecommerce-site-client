@@ -1,0 +1,48 @@
+::placeholder {
+  color: lighten($color-body, 0);
+  letter-spacing: 1px;
+}
+
+input {
+  border-radius: $border-radius;
+  border: 1px solid $color-body;
+  font-size: 1.5rem;
+  outline: 0;
+  padding: 0.5rem 1rem;
+}
+
+label {
+  font-size: 1.5rem;
+  color: darken($color-body, 50%);
+}
+
+.input-group {
+  label {
+    display: block;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.input-group--inline {
+  display: flex;
+  gap: 5px;
+
+  input {
+    flex-grow: 1;
+  }
+}
+
+.input-group--nolabel {
+  label {
+    display: none;
+  }
+
+  input {
+    border-radius: 0;
+    border-width: 0 0 1px;
+    width: 100%;
+  }
+}
