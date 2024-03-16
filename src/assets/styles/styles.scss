@@ -1,7 +1,8 @@
 $color-primary: #f84822;
 $color-secondary: #f03108;
 $color-accent: #ea1400;
-$color-headings: #fff;
+$color-nav: #fff;
+$color-headings: #090909;
 $color-body: #111;
 $border-radius: 5px;
 $margin-page-conatiner: 0 2rem;
@@ -93,6 +94,8 @@ a {
 
 a:hover {
   text-decoration: underline;
+  transform: scale(1.01);
+  transition: transform 0.5s;
 }
 
 .container {
@@ -114,11 +117,11 @@ a:hover {
   p,
   a,
   .icon {
-    color: $color-headings;
+    color: $color-nav;
   }
 
   input {
-    border-color: $color-headings;
+    border-color: $color-nav;
     color: $color-body;
 
     &::placeholder {
@@ -128,5 +131,5 @@ a:hover {
 }
 
 .main {
-  margin: 2rem 0;
+  margin: 5rem 0;
 }

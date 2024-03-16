@@ -1,9 +1,19 @@
+/* Normalize Css */
 @import './normalize.css';
+
+/* Common Styles */
 @import './styles.scss';
+
+/* Header & Footer */
 @import './header.scss';
 @import './footer.scss';
+
+/* Components */
 @import './components/icons.scss';
 @import './components/controls.scss';
 @import './components/containers.scss';
 @import './components/data.scss';
 @import './components/information.scss';
+
+/* Views */
+@import './views/login.scss';

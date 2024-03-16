@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const isToggled = ref(false);
+const isToggled = ref(true);
 
 function toggle() {
     isToggled.value = !isToggled.value;
