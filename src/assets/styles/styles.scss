@@ -17,7 +17,7 @@ $margin-page-conatiner-desktop: 0 5rem;
 /* Typography */
 ::selection {
   background: $color-primary;
-  color: $color-body;
+  color: lighten($color-body, 10%);
 }
 
 html {

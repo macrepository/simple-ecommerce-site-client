@@ -15,10 +15,14 @@ const password = ref('');
                 <TextField type="password" label="Password" id="password" placeholder="Enter your password.."
                     v-model="password" />
                 <div class="login__action">
-                    <Button />
+                    <Button primary>Login</Button>
                     <RouterLink to="/forgotpassword">Forgot Password</RouterLink>
                 </div>
             </form>
+            <div class="login__footer">
+                <p>No account yet?</p>
+                <RouterLink to="/signup">Create an account</RouterLink>
+            </div>
         </div>
     </section>
 </template>
