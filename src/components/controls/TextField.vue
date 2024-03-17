@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-
+import { Field, ErrorMessage } from 'vee-validate';
 
 const props = defineProps<{
     noLabel?: boolean
     inline?: boolean
     label?: string
-    id: string,
+    id?: string
     type?: string
+    name: string
     placeholder?: string
     modelValue: any
 }>()
@@ -25,7 +26,8 @@ const type = computed(() => props.type ?? 'text');
         'input-group--inline': inline
     }">
         <label v-if="!noLabel" :for="id">{{ label }}</label>
-        <input :type="type" :id="id" :value="modelValue"
+        <Field :type="type" :id="id" :name="name" :value="modelValue"
             @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)" :placeholder="placeholder" />
+        <ErrorMessage :name="name" />
     </div>
 </template>
