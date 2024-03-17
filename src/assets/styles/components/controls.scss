@@ -29,6 +29,12 @@ label {
   input {
     width: 100%;
   }
+
+  span {
+    color: $color-accent;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
 }
 
 .input-group--inline {
