@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { isAuthenticated } from '@/router/middleware/auth'
 import HomeView from '@/views/HomeView.vue'
-import LoginView from '@/views/LoginView.vue'
-import AccountView from '@/views/AccountView.vue'
+import AccountView from '@/views/customer/AccountView.vue'
+import LoginView from '@/views/customer/LoginView.vue'
+import CreateView from '@/views/customer/CreateView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,15 +14,20 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/account',
+      path: '/customer/account',
       name: 'account',
       component: AccountView,
       meta: { requiresAuth: true }
     },
     {
-      path: '/login',
+      path: '/customer/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path: '/customer/create',
+      name: 'create',
+      component: CreateView
     }
   ]
 })

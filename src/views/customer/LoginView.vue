@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-
 const email = ref('');
 const password = ref('');
 
 </script>
 <template>
-    <section class="login container">
-        <div class="login__container">
-            <h4 class="login__title">Shopping Login</h4>
-            <form action="" class="login__content">
+    <FormCard class="login">
+        <template #title>Shopping Login</template>
+        <template #content>
+            <form action="">
                 <TextField type="email" label="Email" id="email" placeholder="Enter your email.." v-model="email" />
                 <TextField type="password" label="Password" id="password" placeholder="Enter your password.."
                     v-model="password" />
@@ -19,10 +18,10 @@ const password = ref('');
                     <RouterLink to="/forgotpassword">Forgot Password</RouterLink>
                 </div>
             </form>
-            <div class="login__footer">
-                <p>No account yet?</p>
-                <RouterLink to="/signup">Create an account</RouterLink>
-            </div>
-        </div>
-    </section>
+        </template>
+        <template #footer>
+            <p>No account yet?</p>
+            <RouterLink to="/customer/create">Create an account</RouterLink>
+        </template>
+    </FormCard>
 </template>

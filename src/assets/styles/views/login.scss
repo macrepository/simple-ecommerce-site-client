@@ -1,40 +1,6 @@
 .login {
-  display: flex;
-  justify-content: center;
-
-  &__title {
-    text-align: center;
-    margin-top: 0;
-  }
-
-  &__container {
-    padding: 2rem;
-    border-radius: $border-radius;
-    border: 1px solid darken($color-nav, 15%);
-    width: 80vw;
-  }
-
   &__action {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__footer {
-    margin-top: 3rem;
-    display: flex;
-    gap: 1rem;
-
-    a {
-      text-decoration: underline;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .login {
-    &__container {
-      padding: 4rem;
-      width: 50vw;
-    }
   }
 }

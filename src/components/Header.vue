@@ -24,7 +24,7 @@ const isDrawerOpen = ref(false);
                         </RouterLink>
                     </li>
                     <li class="list__item">
-                        <RouterLink to="/account">
+                        <RouterLink to="/customer/account">
                             <IconUser />
                         </RouterLink>
                     </li>

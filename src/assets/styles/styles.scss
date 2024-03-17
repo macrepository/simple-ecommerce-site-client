@@ -72,6 +72,17 @@ p {
   margin-top: 0;
 }
 
+a {
+  text-decoration: none;
+  color: $color-body;
+}
+
+a:hover {
+  text-decoration: underline;
+  transform: scale(1.01);
+  transition: transform 0.5s;
+}
+
 @media screen and (min-width: 1024px) {
   body {
     font-size: 1.5rem;
@@ -87,27 +98,8 @@ p {
   }
 }
 
-a {
-  text-decoration: none;
-  color: $color-body;
-}
 
-a:hover {
-  text-decoration: underline;
-  transform: scale(1.01);
-  transition: transform 0.5s;
-}
-
-.container {
-  margin: $margin-page-conatiner;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    margin: $margin-page-conatiner-desktop;
-  }
-}
-
+/* Page Default Style */
 .header,
 .footer {
   background: $color-primary;
@@ -133,3 +125,28 @@ a:hover {
 .main {
   margin: 5rem 0;
 }
+
+
+/* Global re-usable styles */
+
+.container {
+  margin: $margin-page-conatiner;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin: $margin-page-conatiner-desktop;
+  }
+}
+
+.text {
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+

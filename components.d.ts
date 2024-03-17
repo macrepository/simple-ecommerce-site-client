@@ -12,6 +12,7 @@ declare module 'vue' {
     Collapsible: typeof import('./src/components/containers/Collapsible.vue')['default']
     Drawer: typeof import('./src/components/containers/Drawer.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    FormCard: typeof import('./src/components/containers/FormCard.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     IconCart: typeof import('./src/components/icons/IconCart.vue')['default']
     IconChevronDown: typeof import('./src/components/icons/IconChevronDown.vue')['default']
