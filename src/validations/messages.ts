@@ -4,5 +4,6 @@ export const message = {
   invalid: '%1 must be valid.',
   requireLowerCaseOf: '%1 must contain at least %2 lowercase letter.',
   requireNumberOf: '%1 must contain at least %2 number.',
-  notMatch: '%1 do not match'
+  requiredCharactersOf: '%1 must contain at least %2 character(s)',
+  notMatch: '%1 do not match',
 }
