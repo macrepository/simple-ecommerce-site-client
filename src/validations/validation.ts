@@ -11,14 +11,19 @@ const lastName = z
   .string()
   .min(1, __(message.required, 'Last Name'))
   .max(50, __(message.maxOf, 'Last Name', '50'))
-const email = z.string().email({ message: __(message.invalid, 'Email') })
+const email = z
+  .string()
+  .min(1, __(message.required, 'Email'))
+  .email({ message: __(message.invalid, 'Email') })
 const password = z
   .string()
+  .min(1, __(message.required, 'Password'))
+  .min(6, __(message.requiredCharactersOf, 'Password', 6))
   .regex(/[a-z]/, { message: __(message.requireLowerCaseOf, 'Password', 1) })
   .regex(/[0-9]/, { message: __(message.requireNumberOf, 'Password', 1) })
-const confirmPassword = z.string()
+const confirmPassword = z.string().min(1, __(message.required, 'Confirm Password'))
 
-export const validationCreateAccountSchema: any = toTypedSchema(
+export const validationCustomerCreateAccountSchema: any = toTypedSchema(
   z
     .object({
       firstName,
@@ -31,4 +36,11 @@ export const validationCreateAccountSchema: any = toTypedSchema(
       message: __(message.notMatch, 'Password'),
       path: ['confirmPassword']
     })
+)
+
+export const validationCustomerLoginSchema: any = toTypedSchema(
+  z.object({
+    email,
+    password
+  })
 )
