@@ -30,7 +30,7 @@ const isDrawerOpen = ref(false);
                     </li>
                 </ul>
                 <div class="search-block">
-                    <TextField no-label id="search" placeholder="Search..." v-model="search" />
+                    <TextField no-label id="search" placeholder="Search..." v-model="search" name="search" />
                 </div>
             </div>
             <div class="nav__bottom">
