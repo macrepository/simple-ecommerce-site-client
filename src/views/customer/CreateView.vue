@@ -10,7 +10,7 @@ import { catchErrors } from '@/utilities/CatchErrors'
 
 const customer = useCustomerStore();
 const { createStorage, removeLocalStorage } = useLocalStorage();
-const { errorFlash } = useFlash();
+const { errorFlash, successFlash } = useFlash();
 const router = useRouter();
 
 const createFormStorageKey = 'create';
@@ -35,7 +35,8 @@ function createAccount(
             removeLocalStorage(createFormStorageKey);
             resetForm();
             createForm.value = createFormInitialValues;
-            router.push({ name: 'account' });
+            successFlash('Your account was created successfully!', 1500);
+            setTimeout(() => router.push({ name: 'account' }), 1500);
         } else {
             errorFlash(response.message);
         }

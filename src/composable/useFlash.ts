@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 
 export function useFlash() {
-  function errorFlash(message: string) {
+  function errorFlash(message: string): void {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
@@ -9,5 +9,15 @@ export function useFlash() {
     })
   }
 
-  return { errorFlash }
+  function successFlash(message: string, timer: number = 1500): void {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: message,
+      showConfirmButton: false,
+      timer
+    })
+  }
+
+  return { errorFlash, successFlash }
 }
