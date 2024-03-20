@@ -152,10 +152,18 @@ a:hover {
   }
 }
 
+.swal2-container {
+  .swal2-icon.swal2-error{
+    border-color: $color-accent;
 
-.swal2-actions {
-  .swal2-confirm {
-    background: $color-primary;
-    color: $color-nav;
+    .swal2-x-mark > span {
+      background-color: $color-accent;
+    }
+  }
+  .swal2-actions {
+    .swal2-confirm {
+      background: $color-primary;
+      color: $color-nav;
+    }
   }
 }

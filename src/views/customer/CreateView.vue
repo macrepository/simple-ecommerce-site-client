@@ -19,7 +19,12 @@ let create = useStorage(storageKey, storageInitial);
 const password = ref('');
 const repeatPassword = ref('');
 
-function createAccount(formValues: any, { setErrors, resetForm }: { setErrors: (errors: Record<string, string>) => void, resetForm: () => void }) {
+function createAccount(
+    formValues: any,
+    { setErrors, resetForm }: {
+        setErrors: (errors: Record<string, string>) => void,
+        resetForm: () => void
+    }) {
     catchErrors(async () => {
         const response = await customer.create(formValues);
         if (response.code == 'success') {
@@ -37,8 +42,7 @@ function createAccount(formValues: any, { setErrors, resetForm }: { setErrors: (
     <FormCard class="create">
         <template #title>Create an Account</template>
         <template #content>
-            <Form :validation-schema="validationCustomerCreateAccountSchema" @submit="createAccount"
-                v-slot="{ setErrors, resetForm }">
+            <Form :validation-schema="validationCustomerCreateAccountSchema" @submit="createAccount">
                 <TextField type="text" label="First Name" id="first-name" name="first_name"
                     placeholder="Enter your first name.." v-model="create.first_name" />
                 <TextField type="text" label="Last Name" id="last-name" name="last_name"
