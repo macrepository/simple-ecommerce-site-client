@@ -21,20 +21,20 @@ const password = z
   .min(6, __(message.requiredCharactersOf, 'Password', 6))
   .regex(/[a-z]/, { message: __(message.requireLowerCaseOf, 'Password', 1) })
   .regex(/[0-9]/, { message: __(message.requireNumberOf, 'Password', 1) })
-const confirmPassword = z.string().min(1, __(message.required, 'Confirm Password'))
+const repeatPassword = z.string().min(1, __(message.required, 'Repeat Password'))
 
 export const validationCustomerCreateAccountSchema: any = toTypedSchema(
   z
     .object({
-      firstName,
-      lastName,
+      first_name: firstName,
+      last_name: lastName,
       email,
       password,
-      confirmPassword
+      repeat_password: repeatPassword
     })
-    .refine((data) => data.password === data.confirmPassword, {
+    .refine((data) => data.password === data.repeat_password, {
       message: __(message.notMatch, 'Password'),
-      path: ['confirmPassword']
+      path: ['repeat_password']
     })
 )
 
