@@ -5,8 +5,8 @@ $color-nav: #fff;
 $color-headings: #090909;
 $color-body: #111;
 $border-radius: 5px;
-$margin-page-conatiner: 0 2rem;
-$margin-page-conatiner-desktop: 0 5rem;
+$margin-page-container: 0 2rem;
+$margin-page-container-desktop: 0 5rem;
 
 *,
 *::after,
@@ -133,12 +133,12 @@ a:hover {
 /* Global re-usable styles */
 
 .container {
-  margin: $margin-page-conatiner;
+  margin: $margin-page-container;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    margin: $margin-page-conatiner-desktop;
+    margin: $margin-page-container-desktop;
   }
 }
 
@@ -162,7 +162,7 @@ a:hover {
   }
 
   .swal2-icon.swal2-success {
-    [class^="swal2-success-line"] {
+    [class^='swal2-success-line'] {
       background-color: $color-primary;
     }
   }
