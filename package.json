@@ -19,6 +19,7 @@
     "@vee-validate/zod": "^4.12.6",
     "axios": "^1.6.8",
     "pinia": "^2.1.7",
+    "sweetalert2": "^11.10.6",
     "vee-validate": "^4.12.6",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",

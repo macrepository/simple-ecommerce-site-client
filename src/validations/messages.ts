@@ -6,4 +6,5 @@ export const message = {
   requireNumberOf: '%1 must contain at least %2 number.',
   requiredCharactersOf: '%1 must contain at least %2 character(s)',
   notMatch: '%1 do not match',
+  errorOccurred: 'Sorry unexpected error occurred. Please try again later.'
 }

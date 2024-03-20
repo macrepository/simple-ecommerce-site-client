@@ -151,3 +151,11 @@ a:hover {
     text-align: right;
   }
 }
+
+
+.swal2-actions {
+  .swal2-confirm {
+    background: $color-primary;
+    color: $color-nav;
+  }
+}
