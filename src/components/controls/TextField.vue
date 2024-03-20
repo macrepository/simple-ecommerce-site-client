@@ -26,7 +26,7 @@ const type = computed(() => props.type ?? 'text');
         'input-group--inline': inline
     }">
         <label v-if="!noLabel" :for="id">{{ label }}</label>
-        <Field :type="type" :id="id" :name="name" :value="modelValue"
+        <Field :type="type" :id="id" :name="name" v-model="props.modelValue"
             @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)" :placeholder="placeholder" />
         <ErrorMessage :name="name" />
     </div>
