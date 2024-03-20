@@ -1,13 +1,34 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useCustomerStore } from '@/stores/CustomerStore';
+import { useFlash } from '@/composable/useFlash';
 import { Form } from 'vee-validate';
 import { validationCustomerLoginSchema } from '@/validations/validation';
+import { catchErrors } from '@/utilities/CatchErrors'
+import { useRouter } from 'vue-router';
+
+const customer = useCustomerStore();
+const { errorFlash } = useFlash();
+const router = useRouter();
 
 const email = ref('');
 const password = ref('');
 
-function loginAccount<T>(data: T) {
-    alert(JSON.stringify(data, null, 2));
+function loginAccount(
+    formValues: any,
+    { setErrors, resetForm }: {
+        setErrors: (errors: Record<string, string>) => void,
+        resetForm: () => void
+    }) {
+    catchErrors(async () => {
+        const response = await customer.login(formValues);
+        if (response.code == 'success') {
+            resetForm();
+            router.push({ name: 'account'});
+        } else {
+            errorFlash(response.message);
+        }
+    }, setErrors, errorFlash);
 }
 
 </script>

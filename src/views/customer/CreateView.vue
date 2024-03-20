@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { useCustomerStore } from '@/stores/CustomerStore';
 import { useLocalStorage } from '@/composable/useStorage';
 import { useFlash } from '@/composable/useFlash';
+import { useRouter } from 'vue-router';
 import { Form } from 'vee-validate';
 import { validationCustomerCreateAccountSchema } from '@/validations/validation';
 import { catchErrors } from '@/utilities/CatchErrors'
@@ -10,6 +11,8 @@ import { catchErrors } from '@/utilities/CatchErrors'
 const customer = useCustomerStore();
 const { createStorage, removeLocalStorage } = useLocalStorage();
 const { errorFlash } = useFlash();
+const router = useRouter();
+
 const createFormStorageKey = 'create';
 const createFormInitialValues = {
     first_name: '',
@@ -27,11 +30,12 @@ function createAccount(
         resetForm: () => void
     }) {
     catchErrors(async () => {
-        const response = await customer.create(formValues);
+        const response = await customer.create(formValues, true);
         if (response.code == 'success') {
             removeLocalStorage(createFormStorageKey);
             resetForm();
             createForm.value = createFormInitialValues;
+            router.push({ name: 'account' });
         } else {
             errorFlash(response.message);
         }
