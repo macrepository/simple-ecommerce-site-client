@@ -33,8 +33,11 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from) => {
-  if (to.meta.requiresAuth && !isAuthenticated()) {
+  const isAuth = isAuthenticated()
+  if (to.meta.requiresAuth && !isAuth) {
     return { name: 'login' }
+  } else if ((to.name == 'login' || to.name == 'create') && isAuth) {
+    return { name: 'account' }
   }
 })
 
