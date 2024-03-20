@@ -1,21 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useStorage } from '@/composable/useStorage';
+import { useCustomerStore } from '@/stores/CustomerStore';
+import { useLocalStorage } from '@/composable/useStorage';
+import { useFlash } from '@/composable/useFlash';
 import { Form } from 'vee-validate';
 import { validationCustomerCreateAccountSchema } from '@/validations/validation';
 import { catchErrors } from '@/utilities/CatchErrors'
-import { useFlash } from '@/composable/useFlash';
-import { useCustomerStore } from '@/stores/CustomerStore';
 
 const customer = useCustomerStore();
+const { createStorage, removeLocalStorage } = useLocalStorage();
 const { errorFlash } = useFlash();
-const storageKey = 'create';
-const storageInitial = {
+const createFormStorageKey = 'create';
+const createFormInitialValues = {
     first_name: '',
     last_name: '',
     email: ''
 };
-let create = useStorage(storageKey, storageInitial);
+let createForm = createStorage(createFormStorageKey, createFormInitialValues);
 const password = ref('');
 const repeatPassword = ref('');
 
@@ -28,9 +29,9 @@ function createAccount(
     catchErrors(async () => {
         const response = await customer.create(formValues);
         if (response.code == 'success') {
-            localStorage.removeItem(storageKey);
+            removeLocalStorage(createFormStorageKey);
             resetForm();
-            create.value = storageInitial;
+            createForm.value = createFormInitialValues;
         } else {
             errorFlash(response.message);
         }
@@ -44,11 +45,11 @@ function createAccount(
         <template #content>
             <Form :validation-schema="validationCustomerCreateAccountSchema" @submit="createAccount">
                 <TextField type="text" label="First Name" id="first-name" name="first_name"
-                    placeholder="Enter your first name.." v-model="create.first_name" />
+                    placeholder="Enter your first name.." v-model="createForm.first_name" />
                 <TextField type="text" label="Last Name" id="last-name" name="last_name"
-                    placeholder="Enter your last name.." v-model="create.last_name" />
+                    placeholder="Enter your last name.." v-model="createForm.last_name" />
                 <TextField type="email" label="Email" id="email" name="email" placeholder="Enter your email.."
-                    v-model="create.email" />
+                    v-model="createForm.email" />
                 <TextField type="password" label="Password" id="password" name="password"
                     placeholder="Enter your password.." v-model="password" />
                 <TextField type="password" label="Repeat Password" id="repeat-password" name="repeat_password"
