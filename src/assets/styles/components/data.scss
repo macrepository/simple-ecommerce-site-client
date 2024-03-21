@@ -10,7 +10,11 @@
   }
 }
 
-.list--inline {
+%list--inline-shared {
   display: flex;
   gap: 20px;
+}
+
+.list--inline {
+  @extend %list--inline-shared;
 }

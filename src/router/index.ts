@@ -5,6 +5,7 @@ import AccountView from '@/views/customer/AccountView.vue'
 import LoginView from '@/views/customer/LoginView.vue'
 import CreateView from '@/views/customer/CreateView.vue'
 import LogoutView from '@/views/customer/LogoutView.vue'
+import OrderHistoryView from '@/views/customer/account/OrderHistoryView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,7 +19,14 @@ const router = createRouter({
       path: '/customer/account',
       name: 'account',
       component: AccountView,
-      meta: { requiresAuth: true }
+      meta: { requiresAuth: true },
+      children: [
+        {
+          path: '/customer/order',
+          name: 'order_history',
+          component: OrderHistoryView
+        },
+      ]
     },
     {
       path: '/customer/login',
