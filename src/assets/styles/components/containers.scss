@@ -33,7 +33,7 @@
   }
 
   .icon {
-    transform: rotate(-180deg);
+    transform: rotate(-90deg);
     transition: transform 0.5s;
   }
 }
@@ -48,6 +48,7 @@
   top: 0;
   transition: width 0.2s ease-in-out;
   width: 0;
+  z-index: 999;
 
   &__content {
     margin: 2rem;
@@ -134,7 +135,6 @@
     box-shadow: 0 0 5px #666;
     transform: scale(1.02);
     transition: transform 0.3s ease-in-out;
-    z-index: 1;
   }
 
   a {
