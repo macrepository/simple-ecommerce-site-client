@@ -1,6 +1,10 @@
 <script setup lang="ts">
 
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const currentRouteName = computed(() => route.name)
 
 const search = ref('');
 const NumberOfCartItems = ref(0);
@@ -15,7 +19,7 @@ const isDrawerOpen = ref(false);
                 <IconHamburger class="nav__icon-hamburger" @click="isDrawerOpen = true" />
                 <RouterLink to="/" class="brand">Shopping</RouterLink>
                 <ul class="list list--inline">
-                    <li class="list__item">
+                    <li :class="{ 'list__item': true, 'active': currentRouteName == 'cart' }">
                         <RouterLink to="/cart">
                             <ListWithBadge>
                                 <IconCart />
@@ -23,8 +27,8 @@ const isDrawerOpen = ref(false);
                             </ListWithBadge>
                         </RouterLink>
                     </li>
-                    <li class="list__item">
-                        <RouterLink to="/customer/account">
+                    <li :class="{ 'list__item': true, 'active': currentRouteName == 'account' }">
+                        <RouterLink :to="{ name: 'account' }">
                             <IconUser />
                         </RouterLink>
                     </li>
@@ -42,14 +46,14 @@ const isDrawerOpen = ref(false);
                         </template>
                         <template #content>
                             <ul class="list header__links">
-                                <li class="list__item">
-                                    <RouterLink to="/pc">Category</RouterLink>
+                                <li :class="{ 'list__item': true, 'active': currentRouteName == 'category' }">
+                                    <RouterLink to="/category">Category</RouterLink>
                                 </li>
-                                <li class="list__item">
-                                    <RouterLink to="/shoes">New Arrival</RouterLink>
+                                <li :class="{ 'list__item': true, 'active': currentRouteName == 'new_arrival' }">
+                                    <RouterLink to="/new-arrival">New Arrival</RouterLink>
                                 </li>
-                                <li class="list__item">
-                                    <RouterLink to="/mobile">Products</RouterLink>
+                                <li :class="{ 'list__item': true, 'active': currentRouteName == 'products' }">
+                                    <RouterLink to="/products">Products</RouterLink>
                                 </li>
                             </ul>
                         </template>
@@ -61,13 +65,13 @@ const isDrawerOpen = ref(false);
                         </template>
                         <template #content>
                             <ul class="list header__links">
-                                <li class="list__item">
-                                    <RouterLink to="/pc">Pc</RouterLink>
+                                <li :class="{ 'list__item': true, 'active': currentRouteName == 'pc' }">
+                                    <RouterLink to="/pc">PC</RouterLink>
                                 </li>
-                                <li class="list__item">
+                                <li :class="{ 'list__item': true, 'active': currentRouteName == 'mobile' }">
                                     <RouterLink to="/mobile">Mobile</RouterLink>
                                 </li>
-                                <li class="list__item">
+                                <li :class="{ 'list__item': true, 'active': currentRouteName == 'shoes' }">
                                     <RouterLink to="/shoes">Shoes</RouterLink>
                                 </li>
                             </ul>

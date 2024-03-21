@@ -34,6 +34,16 @@
 
   .list {
     justify-content: right;
+
+    &__item.active {
+      border-bottom: 2px solid $color-nav;
+    }
+
+    &__item:hover {
+      border-bottom: 2px solid $color-nav;
+      transition: border-bottom 0.1s;
+      transform: scale(1.1);
+    }
   }
 
   .search-block {
