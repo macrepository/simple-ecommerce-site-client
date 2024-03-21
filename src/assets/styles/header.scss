@@ -67,10 +67,12 @@
         display: grid;
         grid-template-columns: 20% 60% 20%;
         border-bottom: 1px solid $color-nav;
+        margin-bottom: 2rem;
 
         &:last-child {
           margin-top: 1rem;
           border-bottom: none;
+          margin-bottom: 0;
         }
 
         .icon-chevron-down {
@@ -111,6 +113,10 @@
     .search-block {
       order: 2;
       width: 50vw;
+
+      input:focus {
+        border: none;
+      }
     }
 
     .list {
