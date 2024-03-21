@@ -1,11 +1,10 @@
 import { defineStore } from 'pinia'
 import axiosInstance from '@/config/axios'
-import axios from 'axios'
 import { useSessionStorage } from '@/composable/useStorage'
 import type { CustomerCreate, CustomerLogin } from '@/types/customer'
 import type { ApiResponse } from '@/types/apiResponse'
 
-const { setSession, getSession } = useSessionStorage()
+const { setSession, getSession, removeSession } = useSessionStorage()
 const xAuthTokenKey = 'x-auth-token'
 const customerSessionKey = 'customer'
 
@@ -19,7 +18,7 @@ export const useCustomerStore = defineStore('customer', {
       )
 
       if (autoLoggeddIn) {
-        return await this.login({email: payload.email, password: payload.password});
+        return await this.login({ email: payload.email, password: payload.password })
       }
 
       return response
@@ -36,6 +35,10 @@ export const useCustomerStore = defineStore('customer', {
       }
 
       return response
+    },
+    logout(): void {
+      removeSession(xAuthTokenKey)
+      removeSession(customerSessionKey)
     }
   },
   getters: {}

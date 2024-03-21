@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-import { useSessionStorage } from '@/composable/useStorage'
+import { useCustomerStore } from '@/stores/CustomerStore';
 
 const router = useRouter();
-const { removeSession } = useSessionStorage();
+const customer = useCustomerStore();
 
-const xAuthTokenKey = 'x-auth-token';
-const customerSessionKey = 'customer';
-
-removeSession(xAuthTokenKey);
-removeSession(customerSessionKey);
+customer.logout();
 
 router.push({ name: 'login' });
 </script>
