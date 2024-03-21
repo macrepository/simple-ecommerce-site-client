@@ -12,6 +12,18 @@
   color: #fff;
 }
 
+.badge--primary {
+  background-color: $color-primary;
+  color: $color-nav;
+  border-radius: 0;
+}
+
+.badge--vertical {
+  writing-mode: vertical-lr;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 /* List with Badge */
 .list-with-badge {
   position: relative;

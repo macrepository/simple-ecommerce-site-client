@@ -53,7 +53,7 @@ const isDrawerOpen = ref(false);
                                     <RouterLink to="/new-arrival">New Arrival</RouterLink>
                                 </li>
                                 <li :class="{ 'list__item': true, 'active': currentRouteName == 'products' }">
-                                    <RouterLink to="/products">Products</RouterLink>
+                                    <RouterLink :to="{ name: 'products' }">Products</RouterLink>
                                 </li>
                             </ul>
                         </template>

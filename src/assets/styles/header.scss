@@ -48,6 +48,10 @@
 
   .search-block {
     grid-column: 1 / -1;
+
+    input:focus {
+      border-color: $color-nav;
+    }
   }
 }
 
@@ -123,10 +127,6 @@
     .search-block {
       order: 2;
       width: 50vw;
-
-      input:focus {
-        border-color: $color-nav;
-      }
     }
 
     .list {
