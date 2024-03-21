@@ -1,6 +1,6 @@
 /* Collapsible */
 .collapsible {
-  .collapsible__header {
+  &__header {
     align-items: center;
     border-bottom: 1px solid $color-accent;
     cursor: pointer;
@@ -23,7 +23,7 @@
   &__content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
   }
 }
 

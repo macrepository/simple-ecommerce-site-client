@@ -36,6 +36,25 @@ const isDrawerOpen = ref(false);
             <div class="nav__bottom">
                 <Drawer v-model:isDrawerOpen="isDrawerOpen">
                     <Collapsible class="header__collapsible">
+                        <span>All</span>
+                        <template #icon>
+                            <IconChevronDown />
+                        </template>
+                        <template #content>
+                            <ul class="list header__links">
+                                <li class="list__item">
+                                    <RouterLink to="/pc">Category</RouterLink>
+                                </li>
+                                <li class="list__item">
+                                    <RouterLink to="/shoes">New Arrival</RouterLink>
+                                </li>
+                                <li class="list__item">
+                                    <RouterLink to="/mobile">Products</RouterLink>
+                                </li>
+                            </ul>
+                        </template>
+                    </Collapsible>
+                    <Collapsible class="header__collapsible">
                         <span>categories</span>
                         <template #icon>
                             <IconChevronDown />

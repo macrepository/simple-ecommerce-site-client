@@ -4,6 +4,16 @@
   .drawer {
     position: absolute;
     left: 0;
+
+    .header__collapsible {
+      margin-bottom: 0;
+      transition: margin-bottom 0.3s ease-in-out;
+    }
+
+    .collapsible--expanded {
+      margin-bottom: 2rem;
+      transition: margin-bottom 0.3s ease-in-out;
+    }
   }
 }
 
@@ -55,10 +65,20 @@
 
       .header__collapsible {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 20% 60% 20%;
+        border-bottom: 1px solid $color-nav;
+
+        &:last-child {
+          margin-top: 1rem;
+          border-bottom: none;
+        }
 
         .icon-chevron-down {
           display: none;
+        }
+
+        .collapsible__header {
+          cursor: default;
         }
 
         .collapsible__content {
