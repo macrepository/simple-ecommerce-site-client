@@ -22,7 +22,23 @@ const gallery = [
 
 </script>
 <template>
-    <div class="container">
-        <Gallery :gallery="gallery"></Gallery>
+    <div class="product container">
+        <div class="product__main">
+            <div class="product__gallery">
+                <Gallery :gallery="gallery" />
+            </div>
+            <div class="product__information">
+                <div class="product__name"><span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint ea accusamus vel nostrum, nobis nesciunt?</span></div>
+                <div class="product__price"><span>P 200</span></div>
+                <div class="product__actions"><Button primary>Add to Cart</Button></div>
+            </div>
+        </div>
+        <div class="product__description">
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum facere in ex asperiores a quibusdam, ratione
+                aperiam? Consectetur eum necessitatibus quo quaerat debitis, soluta quae! Suscipit voluptatibus dolore
+                delectus, soluta consectetur eum impedit nisi optio laborum fugit doloribus veniam dolorem autem, unde
+                nesciunt? Illum optio deleniti at iste neque debitis.
+            </span>
+        </div>
     </div>
 </template>

@@ -1,0 +1,42 @@
+.product {
+  &__main {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 4rem;
+  }
+
+  &__description {
+    margin-top: 5rem;
+  }
+
+  &__name {
+    font-weight: 500;
+  }
+
+  &__price {
+    margin-top: 1rem;
+  }
+
+  &__actions {
+    margin-top: 2rem;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .product {
+    &__main {
+      grid-template-columns: 50% 50%;
+    }
+
+    &__actions {
+  
+      button {
+        width: auto;
+      }
+    }
+  }
+}
