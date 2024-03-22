@@ -12,20 +12,18 @@
   }
 }
 
-.cart-summary {
-    background: red;
-}
-
 @media screen and (min-width: 768px) {
-  //.cart {
-  //    display: flex;
+  .cart {
+    display: flex;
+    gap: 2rem;
 
-    // &__item {
-    //     width: 80%;
-    // }
+    &__item {
+      width: 70%;
+    }
 
-    // &__total {
-    //     width: 20%;
-    // }
-  //}
+    &__total {
+      width: 30%;
+      margin: 0;
+    }
+  }
 }

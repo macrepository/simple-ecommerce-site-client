@@ -3,7 +3,7 @@
 </script>
 <template>
     <div class="container">
-        <div clas="cart-summary">
+        <div class="cart">
             <div class="cart__item">
                 <CartItem />
                 <CartItem />
