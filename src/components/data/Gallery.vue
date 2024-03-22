@@ -76,20 +76,22 @@ onMounted(() => {
         <div class="gallery__picked">
             <img class="gallery__picked-image" :src="imageSelected?.url" :alt="imageSelected?.alt" />
         </div>
-        <div :class="{ 'gallery__images': true, 'grabbing': isDragging }" @scroll="toggleGalleryAction"
-            @mousedown.prevent="startDrag" @mousemove="duringDrag" @mouseleave="isDragging = false"
-            @mouseup="isDragging = false">
-            <img v-for="image in gallery" :key="image.id" :src="image.url" :alt="image.alt"
-                :class="{ 'gallery__image': true, 'active': image.id == imageSelected?.id }"
-                @click="selectImage(image.id)" @mouseover="selectImage(image.id)" />
+        <div class="gallery__images-container">
+            <div :class="{ 'gallery__images': true, 'grabbing': isDragging }" @scroll="toggleGalleryAction"
+                @mousedown.prevent="startDrag" @mousemove="duringDrag" @mouseleave="isDragging = false"
+                @mouseup="isDragging = false">
+                <img v-for="image in gallery" :key="image.id" :src="image.url" :alt="image.alt"
+                    :class="{ 'gallery__image': true, 'active': image.id == imageSelected?.id }"
+                    @click="selectImage(image.id)" @mouseover="selectImage(image.id)" />
+            </div>
+            <button class="gallery__btn gallery__btn-prev" v-if="scrollPosition != 0" @mousedown="startScrolling(prevClick)"
+                @mouseup="stopScrolling" @mouseleave="stopScrolling">
+                <IconChevronLeft />
+            </button>
+            <button class="gallery__btn gallery__btn-next" v-if="scrollPosition != maxScroll"
+                @mousedown="startScrolling(nextClick)" @mouseup="stopScrolling" @mouseleave="stopScrolling">
+                <IconChevronRight />
+            </button>
         </div>
-        <button class="gallery__btn gallery__btn-prev" v-if="scrollPosition != 0" @mousedown="startScrolling(prevClick)"
-            @mouseup="stopScrolling" @mouseleave="stopScrolling">
-            <IconChevronLeft />
-        </button>
-        <button class="gallery__btn gallery__btn-next" v-if="scrollPosition != maxScroll"
-            @mousedown="startScrolling(nextClick)" @mouseup="stopScrolling" @mouseleave="stopScrolling">
-            <IconChevronRight />
-        </button>
     </div>
 </template>
