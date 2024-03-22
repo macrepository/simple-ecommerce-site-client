@@ -24,7 +24,7 @@ declare module 'vue' {
     IconUser: typeof import('./src/components/icons/IconUser.vue')['default']
     Lists: typeof import('./src/components/data/Lists.vue')['default']
     ListWithBadge: typeof import('./src/components/information/ListWithBadge.vue')['default']
-    ProductCard: typeof import('./src/components/containers/ProductCard.vue')['default']
+    ProductCard: typeof import('./src/components/data/ProductCard.vue')['default']
     ProductList: typeof import('./src/components/containers/ProductList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

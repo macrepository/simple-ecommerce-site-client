@@ -19,6 +19,75 @@
   @extend %list--inline-shared;
 }
 
+/* Product Card */
+.product-card {
+  background-color: $color-nav;
+  border: 1px solid $color-primary;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 40rem;
+  max-width: 30rem;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    box-shadow: 0 0 5px #666;
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__figure {
+    margin: 0;
+    padding: 0;
+
+    .product-card__photo {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .product-card__name {
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      margin-top: 1rem;
+      overflow: hidden;
+      text-align: center;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+    }
+  }
+
+  &__information {
+    text-align: center;
+
+    .product-card__sold {
+      padding: 0.5rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+
+    button {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
 /* Image Gallery */
 .gallery {
   width: 100%;
