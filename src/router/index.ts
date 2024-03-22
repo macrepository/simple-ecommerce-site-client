@@ -8,6 +8,7 @@ import LogoutView from '@/views/customer/LogoutView.vue'
 import OrderHistoryView from '@/views/customer/account/OrderHistoryView.vue'
 import AllProductView from '@/views/product/AllProductView.vue'
 import ProductDetailsView from '@/views/product/ProductDetailsView.vue'
+import CartView from '@/views/cart/CartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +55,11 @@ const router = createRouter({
       path: '/products/:productID',
       name: 'product_details',
       component: ProductDetailsView
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: CartView
     }
   ]
 })

@@ -1,0 +1,31 @@
+.cart {
+  &__total {
+    margin-top: 2rem;
+  }
+
+  &__checkout-action {
+    margin-top: 2rem;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.cart-summary {
+    background: red;
+}
+
+@media screen and (min-width: 768px) {
+  //.cart {
+  //    display: flex;
+
+    // &__item {
+    //     width: 80%;
+    // }
+
+    // &__total {
+    //     width: 20%;
+    // }
+  //}
+}
