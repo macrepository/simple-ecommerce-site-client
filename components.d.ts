@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Badge: typeof import('./src/components/information/Badge.vue')['default']
     Button: typeof import('./src/components/controls/Button.vue')['default']
+    CartItem: typeof import('./src/components/data/CartItem.vue')['default']
     Collapsible: typeof import('./src/components/containers/Collapsible.vue')['default']
     Drawer: typeof import('./src/components/containers/Drawer.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
@@ -29,5 +30,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TextField: typeof import('./src/components/controls/TextField.vue')['default']
+    TotalSummary: typeof import('./src/components/data/TotalSummary.vue')['default']
   }
 }
