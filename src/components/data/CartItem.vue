@@ -16,11 +16,11 @@
                     <span>P 2000</span>
                 </div>
             </div>
-            <div class="cart-item__qty">
-                <span class="w-500">Qty: </span>
-                <span>1</span>
+            <div class="cart-item__qty mt-1">
+                <span class="w-500">Quantity: </span>
+                <Counter />
             </div>
-            <div class="cart-item__subtotal">
+            <div class="cart-item__subtotal mt-1">
                 <span class="w-500">Subtotal: </span>
                 <span>P 2000</span>
             </div>
