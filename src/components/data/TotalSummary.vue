@@ -1,5 +1,6 @@
 <template>
     <div class="total">
+        <h4 class="total__title">Summary</h4>
         <div class="total__item">
             <div class="w-500">Total Item(s):</div>
             <div>10</div>

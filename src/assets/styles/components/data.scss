@@ -280,6 +280,11 @@
   border: 1px solid $color-primary;
   padding: 2rem;
 
+  &__title {
+    margin-top: 0;
+    border-bottom: 1px solid $color-primary;
+  }
+
   div {
     display: flex;
     justify-content: space-between;
