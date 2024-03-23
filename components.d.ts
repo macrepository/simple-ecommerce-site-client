@@ -11,6 +11,7 @@ declare module 'vue' {
     Button: typeof import('./src/components/controls/Button.vue')['default']
     CartItem: typeof import('./src/components/data/CartItem.vue')['default']
     Collapsible: typeof import('./src/components/containers/Collapsible.vue')['default']
+    Counter: typeof import('./src/components/controls/Counter.vue')['default']
     Drawer: typeof import('./src/components/containers/Drawer.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     FormCard: typeof import('./src/components/containers/FormCard.vue')['default']
