@@ -10,6 +10,10 @@ const search = ref('');
 const NumberOfCartItems = ref(0);
 const isDrawerOpen = ref(false);
 
+const closeDrawer = (): void => {
+    isDrawerOpen.value = false;
+}
+
 </script>
 
 <template>
@@ -47,13 +51,13 @@ const isDrawerOpen = ref(false);
                         <template #content>
                             <ul class="list header__links">
                                 <li :class="{ 'list__item': true, 'active': currentRouteName == 'category' }">
-                                    <RouterLink to="/category">Category</RouterLink>
+                                    <RouterLink to="/category" @click="closeDrawer">Category</RouterLink>
                                 </li>
                                 <li :class="{ 'list__item': true, 'active': currentRouteName == 'new_arrival' }">
-                                    <RouterLink to="/new-arrival">New Arrival</RouterLink>
+                                    <RouterLink to="/new-arrival" @click="closeDrawer">New Arrival</RouterLink>
                                 </li>
                                 <li :class="{ 'list__item': true, 'active': currentRouteName == 'products' }">
-                                    <RouterLink :to="{ name: 'products' }">Products</RouterLink>
+                                    <RouterLink :to="{ name: 'products' }" @click="closeDrawer">Products</RouterLink>
                                 </li>
                             </ul>
                         </template>
@@ -66,13 +70,13 @@ const isDrawerOpen = ref(false);
                         <template #content>
                             <ul class="list header__links">
                                 <li :class="{ 'list__item': true, 'active': currentRouteName == 'pc' }">
-                                    <RouterLink to="/pc">PC</RouterLink>
+                                    <RouterLink to="/pc" @click="closeDrawer">PC</RouterLink>
                                 </li>
                                 <li :class="{ 'list__item': true, 'active': currentRouteName == 'mobile' }">
-                                    <RouterLink to="/mobile">Mobile</RouterLink>
+                                    <RouterLink to="/mobile" @click="closeDrawer">Mobile</RouterLink>
                                 </li>
                                 <li :class="{ 'list__item': true, 'active': currentRouteName == 'shoes' }">
-                                    <RouterLink to="/shoes">Shoes</RouterLink>
+                                    <RouterLink to="/shoes" @click="closeDrawer">Shoes</RouterLink>
                                 </li>
                             </ul>
                         </template>
