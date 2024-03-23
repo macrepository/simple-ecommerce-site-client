@@ -22,6 +22,8 @@ declare module 'vue' {
     IconChevronRight: typeof import('./src/components/icons/IconChevronRight.vue')['default']
     IconCloseMark: typeof import('./src/components/icons/IconCloseMark.vue')['default']
     IconHamburger: typeof import('./src/components/icons/IconHamburger.vue')['default']
+    IconMinus: typeof import('./src/components/icons/IconMinus.vue')['default']
+    IconPlus: typeof import('./src/components/icons/IconPlus.vue')['default']
     IconUser: typeof import('./src/components/icons/IconUser.vue')['default']
     Lists: typeof import('./src/components/data/Lists.vue')['default']
     ListWithBadge: typeof import('./src/components/information/ListWithBadge.vue')['default']
