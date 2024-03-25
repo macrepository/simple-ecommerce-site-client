@@ -31,7 +31,7 @@ const closeDrawer = (): void => {
                             </ListWithBadge>
                         </RouterLink>
                     </li>
-                    <li :class="{ 'list__item': true, 'active': currentRouteName == 'account' }">
+                    <li :class="{ 'list__item': true, 'active': ['account', 'create', 'login'].includes(currentRouteName as string) }">
                         <RouterLink :to="{ name: 'account' }">
                             <IconUser />
                         </RouterLink>
